@@ -2,6 +2,14 @@
 import pygame
 import random
 import math
+import sys
+import os
+
+if getattr(sys, 'frozen', False):
+    current_path = sys._MEIPASS
+else:
+    current_path = os.path.dirname(__file__)
+
 
 # Initialize game engine
 pygame.init()
@@ -30,49 +38,49 @@ GREEN = (100, 255, 100)
 PURPLE = (100, 5, 100)
 
 # Images
-ship_img = pygame.image.load('Images/Ship1.png')
-ship_img2 = pygame.image.load('Images/Ship2.png')
-ship_img3 = pygame.image.load('Images/Ship3.png')
-ship_img4 = pygame.image.load('Images/Ship4.png')
-ship_img5 = pygame.image.load('Images/Ship5.png')
-ship_img6 = pygame.image.load('Images/Ship6.png')
-ship_img7 = pygame.image.load('Images/Ship7.png')
-laser_img = pygame.image.load('Images/laser1.png')
-laser_img2 = pygame.image.load('Images/laser2.png')
-laser_img3 = pygame.image.load('Images/laser3.png')
-mob_img = pygame.image.load('Images/alien1.png')
-mob_img2 = pygame.image.load('Images/alien2.png')
-mob_img3 = pygame.image.load('Images/alien3.png')
-mob_img4 = pygame.image.load('Images/alien4.png')
-turret_img = pygame.image.load('Images/turret.png')
-bomb_img = pygame.image.load('Images/Bomb1.png')
-bomb_img2 = pygame.image.load('Images/Bomb2.png')
-power_bomb = pygame.image.load('Images/power_bomb.png')
-gattling = pygame.image.load('Images/gattling.png')
-explo_img = pygame.image.load('Images/explo.png')
-wrench_img = pygame.image.load('Images/wrench.png')
-heart_img = pygame.image.load('Images/heart.png')
-level_img = pygame.image.load('Images/power_up.png')
-box = pygame.image.load('Images/box.png')
-start_screen = pygame.image.load('Images/start_screen.png')
-intro1 = pygame.image.load('Images/intro1.png')
-intro2 = pygame.image.load('Images/intro2.png')
-end_screen = pygame.image.load('Images/End.png')
-boss_img = pygame.image.load('Images/boss.png')
+ship_img = pygame.image.load(current_path + '/Images/Ship1.png')
+ship_img2 = pygame.image.load(current_path + '/Images/Ship2.png')
+ship_img3 = pygame.image.load(current_path + '/Images/Ship3.png')
+ship_img4 = pygame.image.load(current_path + '/Images/Ship4.png')
+ship_img5 = pygame.image.load(current_path + '/Images/Ship5.png')
+ship_img6 = pygame.image.load(current_path + '/Images/Ship6.png')
+ship_img7 = pygame.image.load(current_path + '/Images/Ship7.png')
+laser_img = pygame.image.load(current_path + '/Images/laser1.png')
+laser_img2 = pygame.image.load(current_path + '/Images/laser2.png')
+laser_img3 = pygame.image.load(current_path + '/Images/laser3.png')
+mob_img = pygame.image.load(current_path + '/Images/alien1.png')
+mob_img2 = pygame.image.load(current_path + '/Images/alien2.png')
+mob_img3 = pygame.image.load(current_path + '/Images/alien3.png')
+mob_img4 = pygame.image.load(current_path + '/Images/alien4.png')
+turret_img = pygame.image.load(current_path + '/Images/turret.png')
+bomb_img = pygame.image.load(current_path + '/Images/Bomb1.png')
+bomb_img2 = pygame.image.load(current_path + '/Images/Bomb2.png')
+power_bomb = pygame.image.load(current_path + '/Images/power_bomb.png')
+gattling = pygame.image.load(current_path + '/Images/gattling.png')
+explo_img = pygame.image.load(current_path + '/Images/explo.png')
+wrench_img = pygame.image.load(current_path + '/Images/wrench.png')
+heart_img = pygame.image.load(current_path + '/Images/heart.png')
+level_img = pygame.image.load(current_path + '/Images/power_up.png')
+box = pygame.image.load(current_path + '/Images/box.png')
+start_screen = pygame.image.load(current_path + '/Images/start_screen.png')
+intro1 = pygame.image.load(current_path + '/Images/intro1.png')
+intro2 = pygame.image.load(current_path + '/Images/intro2.png')
+end_screen = pygame.image.load(current_path + '/Images/End.png')
+boss_img = pygame.image.load(current_path + '/Images/boss.png')
 
 # Sounds
-laser_sound = pygame.mixer.Sound('laser2.ogg')
-MUSIC = pygame.mixer.music.load('Brinstar.ogg')
-HEY = pygame.mixer.Sound('hey.ogg')
-SCREAM = pygame.mixer.Sound('scream.ogg')
-BOOM = pygame.mixer.Sound('boom.ogg')
+laser_sound = pygame.mixer.Sound(current_path + '/Sounds/laser2.ogg')
+MUSIC = pygame.mixer.music.load(current_path + '/Sounds/Brinstar.ogg')
+HEY = pygame.mixer.Sound(current_path + '/Sounds/hey.ogg')
+SCREAM = pygame.mixer.Sound(current_path + '/Sounds/scream.ogg')
+BOOM = pygame.mixer.Sound(current_path + '/Sounds/boom.ogg')
 
 # Fonts
-FONT_TY = pygame.font.Font('Mario64.ttf', 12)
-FONT_SM = pygame.font.Font('Mario64.ttf', 24)
-FONT_MD = pygame.font.Font('Mario64.ttf', 32)
-FONT_LG = pygame.font.Font('Mario64.ttf', 64)
-FONT_XL = pygame.font.Font('Mario64.ttf', 96)
+FONT_TY = pygame.font.Font(current_path + '/Fonts/Mario64.ttf', 12)
+FONT_SM = pygame.font.Font(current_path + '/Fonts/Mario64.ttf', 24)
+FONT_MD = pygame.font.Font(current_path + '/Fonts/Mario64.ttf', 32)
+FONT_LG = pygame.font.Font(current_path + '/Fonts/Mario64.ttf', 64)
+FONT_XL = pygame.font.Font(current_path + '/Fonts/Mario64.ttf', 96)
 
 # Stages
 start = 0
@@ -962,7 +970,7 @@ setup()
 ship_setup()
 
 # Load Stage Backgrounds
-stage1_backg = pygame.image.load('Images/stage1.png')
+stage1_backg = pygame.image.load(current_path + '/Images/stage1.png')
 screen_stage1.blit(stage1_backg, [0,0])
 
 # Game loop
@@ -1007,7 +1015,7 @@ while not done:
                 elif event.key == pygame.K_v and e_show:
                     v_show = True
                     if v_show:
-                        MUSIC = pygame.mixer.music.load('Minecraft.ogg')
+                        MUSIC = pygame.mixer.music.load(current_path + '/Sounds/Minecraft.ogg')
                         pygame.mixer.music.play(-1)
 
 
