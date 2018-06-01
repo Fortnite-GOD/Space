@@ -27,7 +27,7 @@ The main objective of the game is to defeat all enemies on the screen. There are
 
 ## Start Screen:
 
-![Image](https://github.com/Fortnite-GOD/Space/blob/master/Images/start_screen.png)
+![Image](https://raw.githubusercontent.com/Fortnite-GOD/Space/master/Images/start_screen.png)
 
 ## Gameplay:
 
